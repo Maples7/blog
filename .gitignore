@@ -5,3 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+debug.log
+.vscode/
+.deploy_git/
