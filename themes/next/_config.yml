@@ -125,8 +125,8 @@ font:
 social:
   GitHub: https://github.com/Maples7
   知乎: https://www.zhihu.com/people/maples7
-  微博: http://weibo.com/maples74lq/
-  豆瓣: https://www.douban.com/people/82391888/
+  # 微博: http://weibo.com/maples74lq/
+  # 豆瓣: https://www.douban.com/people/82391888/
 
 
 # Social Links Icons
@@ -140,7 +140,7 @@ social_icons:
   # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   Twitter: twitter
-  Weibo: weibo
+  微博: weibo
   知乎: globe
   豆瓣: globe
 
@@ -162,7 +162,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
+creative_commons: by-nc-sa
 #creative_commons:
 
 
@@ -309,9 +309,9 @@ facebook_comments_plugin:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: ox9piPRb4PMLblpdjYObCAbP-gzGzoHsz
+  app_key: AxGe3VngCSYm3M1TcS303rwj
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/

@@ -72,3 +72,8 @@ deploy:
   type: git
   repo: https://github.com/Maples7/Maples7.github.io.git
   branch: master
+
+# Local Search
+search:
+  path: search.xml
+  field: post
