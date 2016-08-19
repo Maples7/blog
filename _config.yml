@@ -9,7 +9,7 @@ description: 'Forever young, forever on the road.'
 author: Maples7
 language: zh-Hans
 timezone:
-avatar: /uploads/head_pic.JPG
+avatar: http://oc3nlt0h2.bkt.clouddn.com/head_pic.JPG
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -114,3 +114,9 @@ image_minifier:
   optimizationLevel: 2
   pngquant: true
   progressive: true
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
