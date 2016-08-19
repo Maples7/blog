@@ -61,6 +61,17 @@ time_format: HH:mm:ss
 per_page: 5
 pagination_dir: page
 
+index_generator:
+  per_page: 5
+
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+
+tag_generator:
+  per_page: 20
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -77,3 +88,29 @@ deploy:
 search:
   path: search.xml
   field: post
+
+# Optimization
+html_minifier:
+  enable: true
+  exclude: 
+
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: true
+  multipass: true
+  optimizationLevel: 2
+  pngquant: true
+  progressive: true
