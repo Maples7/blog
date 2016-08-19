@@ -400,3 +400,11 @@ images: images
 
 # Theme version
 version: 5.0.1
+
+# ---------------------------------------------------------------
+# Private Settings
+# ---------------------------------------------------------------
+
+# WeChat & ZhiFuBao reward comment
+wechatpay: http://oc3nlt0h2.bkt.clouddn.com/WeChat.gif
+alipay: http://oc3nlt0h2.bkt.clouddn.com/ZhiFuBao.gif
