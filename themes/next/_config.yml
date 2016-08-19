@@ -406,5 +406,6 @@ version: 5.0.1
 # ---------------------------------------------------------------
 
 # WeChat & ZhiFuBao reward comment
+reward_comment: 听说你想请我吃糖？0.0
 wechatpay: http://oc3nlt0h2.bkt.clouddn.com/WeChat.gif
 alipay: http://oc3nlt0h2.bkt.clouddn.com/ZhiFuBao.gif
