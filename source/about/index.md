@@ -30,3 +30,7 @@ data: 2016/8/16 12:02:07
     一个对文科十分向往并感兴趣、对理科有着深厚感情的伪文艺伪技术工科宅。
 
 If you want to know more, contact me via my private WeChat account:maples7_lq or email.
+
+### 最近访客
+<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
+
