@@ -15,8 +15,12 @@ data: 2016/8/16 12:02:07
 ---
 
 ### Tags Related:
-    Coding, IT, Capturing, Music, Reading, Books, Movies, www, Design, Traveling……
 
+- Coding, IT, Capturing, Music, Reading, Books, Movies, www, Design, Traveling……
+
+### What I Like:
+
+- ~~Table Tennis~~, Tennis, Harry Potter, Night, [David Fincher](https://www.douban.com/tag/大卫芬奇/), [The Social Network](https://movie.douban.com/subject/3205624/), [The Count of Monte Cristo](https://book.douban.com/subject/10559578/), [The Three-Body Problem](https://book.douban.com/subject/6518605/), [Lisa Ono](https://www.douban.com/tag/小野丽莎/)……
 
 ### FAQ:
 
@@ -31,9 +35,13 @@ data: 2016/8/16 12:02:07
 
 If you want to know more, contact me via my private WeChat account:maples7_lq or email.
 
+---
+
 ### 版权声明
 
-本博客所有内容（包括所有原创文字和文中的**图片**）遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 共享协议，转载请务必注明出处。
+本博客所有内容（包括所有原创文字和文中的**图片**）遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 知识共享协议，转载请务必注明出处。
+
+---
 
 ### 最近访客
 <div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
