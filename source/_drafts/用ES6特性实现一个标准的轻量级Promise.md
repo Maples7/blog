@@ -38,7 +38,64 @@ const _result = Symbol('result'); // 用于 result 私有变量的 Symbol
 const _callbacks = Symbol('callbacks'); // 用于 callbacks 私有变量的 Symbol
 ```
 
-这里我们将Promise状态定义到一个对象之中，并且属性名
+这里我们将Promise状态定义到一个对象之中，并且用属性名语义化状态，值其实没什么意义，但是这样写符合“让错误更早的暴露出来”的编程原则，让编译器（或解释器）去帮我们提前检测错误，总比写在字符串在运行时才把定位还不一定准确的错误暴露出来要好。
+
+其次，还定义了几个用于定义私有变量的Symbol。
+
+### 构造函数
+
+构造函数无非是给变量做一些初始化的工作，然后执行用户传入的函数。关键在于我们需要定义好传入的函数的参数，即resolve和reject函数。
+
+先看代码：
+
+```js
+constructor(exec) {
+    let self = this;
+
+    if (!(typeof (exec) === 'function')) {
+        throw new TypeError('Promise constructor argument exec must be a function.') 
+    }
+
+    self[_status] = STATUS.PENDING; 
+    self[_result] = undefined;
+    self[_callbacks] = [];
+
+    function resolve(value) {
+        if (value instanceof Promise) {
+            return value.then(resolve, reject);
+        }
+        nextTick(() => {
+            if (self[_status] === STATUS.PENDING) {
+                self[_status] = STATUS.RESOLVED;
+                self[_result] = value;
+                self[_callbacks].map(cb => cb.onResolved(self[_result]));
+            }
+        });
+    }
+
+    function reject(reason) {
+        nextTick(() => {
+            if (self[_status] === STATUS.PENDING) {
+                self[_status] = STATUS.REJECTED;
+                self[_result] = reason;
+                self[_callbacks].map(cb => cb.onRejected(self[_result]));
+            }
+        });
+    }
+
+    try {
+        exec(resolve, reject);
+    } catch(e) {
+        reject(e);
+    }
+}
+```
+
+在构造函数里，首先限制了用户传入的参数必需为函数，然后将状态置为pending，并初始化result和callbacks。
+
+之后，尝试运行用户传入的函数，并提供给我们自己定义的resolve和reject函数作为参数。因为运行函数可能会抛出难以预期的错误，所以外面用try...catch包裹一层，并把错误用reject处理，表示当前Promise被reject。
+
+这里的关键在于我们自己定义的resolve和reject函数。// TODO
 
 ### References
 1. [剖析Promise内部结构，一步一步实现一个完整的、能通过所有Test case的Promise类 #3 ](https://github.com/xieranmaya/blog/issues/3)；
