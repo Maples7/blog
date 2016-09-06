@@ -15,7 +15,7 @@ avatar: http://oc3nlt0h2.bkt.clouddn.com/head_pic.JPG
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://maples7.com/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:subtitle/
 permalink_defaults:
 
 # Directory
