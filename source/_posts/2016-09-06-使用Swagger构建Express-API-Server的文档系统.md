@@ -14,15 +14,15 @@ date: 2016-09-06 22:16:11
 {% fullimage http://oc3nlt0h2.bkt.clouddn.com/20160907.png, 图片显示错误, Swagger——The World's Most Popular Framework for APIs %}
 <!-- more -->
 ## 目标
-- 文档生成的「源」（或者说「依据」）与代码不分离，即直接用`jsdoc`的注释生成文档；
-- 可以用同样的「源」同时实现接口输入输出参数验证，最大化保证文档与后端具体实现之间的一致性；
-- 文档在线可用性测试，并且可以完美解决跨域问题；
+- 文档生成的「源」（或者说「依据」）与代码不分离，即直接用`jsdoc`注释生成文档；
+- 可以用同样的「源」同时实现对接口输入输出参数的验证，最大化保证文档与后端具体实现之间的一致性；
+- 文档在线可用性测试，并且可以完美解决跨域请求的问题；
 - 在后端接口还未完成时，可以Mock返回数据；              
 - 最好能自动生成一些测试数据甚至自动进行测试； 
 
 ## 从 JSDoc 到可视化文档
 ### Step 1：定义接口模型
-在Controller层每一个条路由的函数注释上（具体来说，Routes目录下或Controller目录下均可，只要配置好`Step 2`中的`swagger-jsdoc`，明确「源」所在的目录即可）按`Swagger YAML`语法定义接口模型，示例如下:
+在Controller层每一条路由的函数注释上（具体来说，Routes目录下或Controller目录下均可，只要配置好`Step 2`中的`swagger-jsdoc`，明确「源」所在的目录即可）按`Swagger YAML`语法定义接口模型，示例如下:
 ```js
 /**
  * @swagger
@@ -90,7 +90,7 @@ Demo：[mjhea0/node-swagger-api](https://github.com/mjhea0/node-swagger-api)。
 这里不用把生成的JSON保存在本地磁盘上，直接用一个变量引用即可。
 
 ### Step 3：用 Swagger UI 生成可视化文档
-在线查看：打开[http://petstore.swagger.io/](http://petstore.swagger.io/)，在顶部的URL栏输入可以获取`Step 2`中生成的JSON格式的Swagger文档定义的URL，~~一般来说可以是http://localhost:3000/swagger.json （需要自己手动在代码中书写路由和请求的返回）~~ 在使用了后文说明的Swagger UI中间件之后按照默认配置是 http://localhost:3000/api-docs （注意最后没有`/`）。这种方式需要解决跨域请求的问题，详见后文。
+在线查看：打开[http://petstore.swagger.io/](http://petstore.swagger.io/)，在顶部的URL栏输入可以获取`Step 2`中生成的JSON格式的Swagger文档定义的URL，~~一般来说可以是http://localhost:3000/swagger.json （需要自己手动在代码中书写路由和请求的返回）~~ 在使用了后文要说明的[Swagger UI中间件](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-ui)之后按照默认配置是 http://localhost:3000/api-docs （注意最后没有`/`）。这种方式需要解决跨域请求的问题，详见后文。
 
 ~~本地离线查看：直接在本项目public（静态文件目录）下放置离线版`Swagger UI`，直接打开即可查看。详见`Step 2`中的Demo及作者的博文说明。~~
 
@@ -101,13 +101,6 @@ Demo：[mjhea0/node-swagger-api](https://github.com/mjhea0/node-swagger-api)。
 这个中间件可以让你在开发时再也无需操心可视化文档的前端实现和如何查看自动生成Swagger接口定义（以便确定是否符合规范和自己的需求）的问题。
 
 ## 一些常见问题
-### 接口参数验证
-使用`swagger-tools`中的[Swagger Metadata](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-metadata)和[Swagger Validator](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-validator)中间件：  
-- [swagger-tools Quick Start](https://github.com/apigee-127/swagger-tools/blob/master/docs/QuickStart.md)；
-- [Demo](https://github.com/apigee-127/swagger-tools/tree/master/examples/2.0)；
-
-其中Swagger Metadata中间件做了匹配请求路由与Swagger路由定义和解析参数的工作，Swagger Validator中间件做了验证参数类型和其他已定义的参数限制的工作。
-
 ### 解决跨域请求的问题
 官方说明见：[https://github.com/swagger-api/swagger-ui#cors-support](https://github.com/swagger-api/swagger-ui#cors-support)。
 在`app.use('/', routes);`之前加一个如下的中间件设置一些cors相关的头可以解决问题: 
@@ -119,6 +112,13 @@ app.use((req, res, next) => {
   next();
 });
 ```
+
+### 接口参数验证
+使用`swagger-tools`中的[Swagger Metadata](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-metadata)和[Swagger Validator](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-validator)中间件：  
+- [swagger-tools Quick Start](https://github.com/apigee-127/swagger-tools/blob/master/docs/QuickStart.md)；
+- [Demo](https://github.com/apigee-127/swagger-tools/tree/master/examples/2.0)；
+
+其中Swagger Metadata中间件做了匹配请求路由与Swagger定义路由以及解析参数的工作，Swagger Validator中间件做了验证参数类型和其他已定义的参数限制的工作。
 
 ### Mock 返回数据
 使用`swagger-tools`中的[Swagger Router中间件](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-router)即可实现。
@@ -202,7 +202,7 @@ describe('/api/puppies', function() {
 ### Mock 或 Swagger UI 失效
 由于异步的问题，如果你把`app.lieten`写在`swaggerTools.initializeMiddleware`的回调函数外面，那很可能在你的应用已经启动时，`swagger-tools`的中间件并没有加载完毕，导致中间件失效（不会报错）。
 
-鉴于此，应该把尽量`swaggerTools.initializeMiddleware`写在中间件链的后面部分，然后把之后的`app.use`（比如`app.use('/', routes);`）和`app.lieten`写在`swaggerTools.initializeMiddleware`的回调函数内部。所以，`Express 4`中提倡的用`./bin/www`来启动应用的要求在这里可能无法被遵循了。
+鉴于此，应该尽量把`swaggerTools.initializeMiddleware`写在中间件链的后面部分，然后把位于其后的`app.use`（比如`app.use('/', routes);`）和`app.listen`写在`swaggerTools.initializeMiddleware`的回调函数内部。所以，`Express 4`中提倡的用`./bin/www`来启动应用的要求在这里可能无法被遵循了。
 
 更详细的讨论[看这个issue](https://github.com/apigee-127/swagger-tools/issues/328)。
 
