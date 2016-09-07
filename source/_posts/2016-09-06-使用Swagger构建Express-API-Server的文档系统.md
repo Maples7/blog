@@ -135,7 +135,7 @@ app.use((req, res, next) => {
 ]
 ```
 
-### 生成自动测试
+### 自动生成测试代码
 使用[apigee-127/swagger-test-templates](https://github.com/apigee-127/swagger-test-templates)可以根据你的Swagger定义自动生成对所有接口功能测试的脚手架代码（基本可以自动确定的地方都自动生成了），在你把自动生成的代码写入磁盘文件后，只需修改极少量的地方（一般是提供一些需要测试的参数）就可以使用测试。
 
 自动生成的代码长成这样：
@@ -196,6 +196,8 @@ describe('/api/puppies', function() {
 ```
 
 之后可以考虑用gulp把测试串联起来进行自动化测试。
+
+目前这个包对于`Swagger 2.0`的支持还不是很完全，尤其是对于`$ref`不能自动解析，这样的话需要手动改动的测试代码多一些，不过他们正在着力解决这个问题，估计下一个版本（1.3.0）就会加入对`$ref`的解析，详细的讨论可以[看这个issue](https://github.com/apigee-127/swagger-test-templates/issues/104)。
 
 ### Mock 或 Swagger UI 失效
 由于异步的问题，如果你把`app.lieten`写在`swaggerTools.initializeMiddleware`的回调函数外面，那很可能在你的应用已经启动时，`swagger-tools`的中间件并没有加载完毕，导致中间件失效（不会报错）。
