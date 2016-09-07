@@ -83,13 +83,13 @@ router.post('/api/puppies', db.createPuppy);
 
 在生成的完整配置中，同一个路径下的配置（比如上述示例中`/api/puppies`下的`get`与`post`）会合并在这同一个路径之下，所以同一个路径下的全局配置只用写一遍就行了（比如下文`Mock返回数据`小节中使用`Swagger Router`中间件需要的`x-swagger-router-controller`配置）。
 
-### Step 2：生成Swagger接口定义
+### Step 2：生成 Swagger 接口定义
 用 [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) 生成JSON格式的Swagger接口定义。
 Demo：[mjhea0/node-swagger-api](https://github.com/mjhea0/node-swagger-api)。
 
 这里不用把生成的JSON保存在本地磁盘上，直接用一个变量引用即可。
 
-### Step 3：用Swagger UI生成可视化文档
+### Step 3：用 Swagger UI 生成可视化文档
 在线查看：打开[http://petstore.swagger.io/](http://petstore.swagger.io/)，在顶部的URL栏输入可以获取`Step 2`中生成的JSON格式的Swagger文档定义的URL，~~一般来说可以是http://localhost:3000/swagger.json （需要自己手动在代码中书写路由和请求的返回）~~ 在使用了后文说明的Swagger UI中间件之后按照默认配置是 http://localhost:3000/api-docs （注意最后没有`/`）。这种方式需要解决跨域请求的问题，详见后文。
 
 ~~本地离线查看：直接在本项目public（静态文件目录）下放置离线版`Swagger UI`，直接打开即可查看。详见`Step 2`中的Demo及作者的博文说明。~~
@@ -120,7 +120,7 @@ app.use((req, res, next) => {
 });
 ```
 
-### Mock返回数据
+### Mock 返回数据
 使用`swagger-tools`中的[Swagger Router中间件](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-router)即可实现。
 
 正常情况下，根据你的Swagger定义会返回`Response Code`为`200`（当Swagger定义中已定义`200`的返回时）的类似这样的数据：
@@ -197,7 +197,7 @@ describe('/api/puppies', function() {
 
 之后可以考虑用gulp把测试串联起来进行自动化测试。
 
-### Mock或Swagger UI失效
+### Mock 或 Swagger UI 失效
 由于异步的问题，如果你把`app.lieten`写在`swaggerTools.initializeMiddleware`的回调函数外面，那很可能在你的应用已经启动时，`swagger-tools`的中间件并没有加载完毕，导致中间件失效（不会报错）。
 
 鉴于此，应该把尽量`swaggerTools.initializeMiddleware`写在中间件链的后面部分，然后把之后的`app.use`（比如`app.use('/', routes);`）和`app.lieten`写在`swaggerTools.initializeMiddleware`的回调函数内部。所以，`Express 4`中提倡的用`./bin/www`来启动应用的要求在这里可能无法被遵循了。
@@ -212,7 +212,7 @@ describe('/api/puppies', function() {
 ### 调试技巧
 使用`DEBUG=swagger-tools* node app`启动项目，控制台会输出更多详细的信息。
 
-## 完整的Demo
+## 完整的 Demo
 [Maples7/swagger-express-demo](https://github.com/Maples7/swagger-express-demo)
 
 将前面所讲的内容整合进了一个小示例中，以供参考。
