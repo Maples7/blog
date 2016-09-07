@@ -197,7 +197,7 @@ describe('/api/puppies', function() {
 
 之后可以考虑用gulp把测试串联起来进行自动化测试。npm上已经有[这样的包](https://www.npmjs.com/package/gulp-swagger-test-templates)，不过我还没有试过。
 
-目前这个包对于`Swagger 2.0`的支持还不是很完全，尤其是对`$ref`不能自动解析，这样的话需要手动改动的测试代码多一些，不过他们正在着力解决这个问题，估计下一个版本（1.3.0）就会加入对`$ref`的解析，详细的讨论可以[看这个issue](https://github.com/apigee-127/swagger-test-templates/issues/104)。
+目前这个包对于`Swagger 2.0`的支持还不是很完全，尤其是对`$ref`不能自动解析，这样的话需要手动改动的测试代码多一些，不过他们正在着力解决这个问题，估计下一个版本（1.3.0）就会加入对`$ref`的解析，详细的讨论可以[看这个issue](https://github.com/apigee-127/swagger-test-templates/issues/104)。同时，他们还在考虑添加通过JSON-Schema自动批量生成测试数据的功能，目测[也将在下一个版本中推出](https://github.com/apigee-127/swagger-test-templates/pull/107)，值得期待。
 
 ### Mock 或 Swagger UI 失效
 由于异步的问题，如果你把`app.lieten`写在`swaggerTools.initializeMiddleware`的回调函数外面，那很可能在你的应用已经启动时，`swagger-tools`的中间件并没有加载完毕，导致中间件失效（不会报错）。
