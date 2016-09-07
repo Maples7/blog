@@ -55,6 +55,28 @@ date: 2016-09-06 22:16:11
  *           $ref: '#/definitions/Puppy'
  */
 router.get('/api/puppies', db.getAllPuppies);
+
+/**
+ * @swagger
+ * /api/puppies:
+ *   post:
+ *     tags:
+ *       - Puppies
+ *     description: Creates a new puppy
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: puppy
+ *         description: Puppy object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ */
+router.post('/api/puppies', db.createPuppy);
 ```
 
 ### Step 2：生成Swagger文档定义
@@ -62,7 +84,7 @@ router.get('/api/puppies', db.getAllPuppies);
 Demo：[mjhea0/node-swagger-api](https://github.com/mjhea0/node-swagger-api)。
 
 ### Step 3：用Swagger UI生成可视化文档
-在线查看：打开[http://petstore.swagger.io/](http://petstore.swagger.io/)，在顶部的URL栏输入可以获取Step 2中生成的JSON格式的Swagger文档定义的URL，一般来说是[http://localhost:3000/swagger.json](http://localhost:3000/swagger.json)。这种方式需要解决跨域请求的问题，详见后文。
+在线查看：打开[http://petstore.swagger.io/](http://petstore.swagger.io/)，在顶部的URL栏输入可以获取Step 2中生成的JSON格式的Swagger文档定义的URL，一般来说是http://localhost:3000/swagger.json。这种方式需要解决跨域请求的问题，详见后文。
 本地离线查看：直接在本项目public（静态文件目录）下放置离线版Swagger UI，直接打开即可查看。详见Step 2中的Demo及作者的博文说明。
 
 **！！！用后文swagger-tools中的Swagger UI中间件似乎可以直接生成，待考证**
@@ -93,7 +115,7 @@ app.use((req, res, next) => {
 **!!TODO**
 
 ## 入门必读
-0. [swagger-spec/versions/2.0.md](https://github.com/reverb/swagger-spec/blob/master/versions/2.0.md)；
+0. [swagger-spec/versions/2.0.md](http://swagger.io/specification/)；
 1. [swagger-tools/docs/QuickStart.md](https://github.com/apigee-127/swagger-tools/blob/master/docs/QuickStart.md)；
-2. [swagger-tools/docs/Middleware.md](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#how-to-use)；
+2. [swagger-tools/docs/Middleware.md](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md)；
 3. [swagger-tools/docs/API.md](https://github.com/apigee-127/swagger-tools/blob/master/docs/API.md)；
