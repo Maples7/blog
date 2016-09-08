@@ -215,9 +215,7 @@ describe('/api/puppies', function() {
 使用`DEBUG=swagger-tools* node app`启动项目，控制台会输出更多详细的信息。
 
 ## 完整的 Demo
-[Maples7/swagger-express-demo](https://github.com/Maples7/swagger-express-demo)
-
-将前面所讲的内容整合进了一个小示例中，以供参考。
+[Maples7/swagger-express-demo](https://github.com/Maples7/swagger-express-demo)：将前面所讲的内容整合进了一个小示例中，以供参考。
 
 ## 上手必读
 0. [swagger-spec](http://swagger.io/specification/)；
