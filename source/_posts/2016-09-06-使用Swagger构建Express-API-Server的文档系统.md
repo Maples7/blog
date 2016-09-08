@@ -92,9 +92,7 @@ Demo：[mjhea0/node-swagger-api](https://github.com/mjhea0/node-swagger-api)。
 ### Step 3：用 Swagger UI 生成可视化文档
 在线查看：打开[http://petstore.swagger.io/](http://petstore.swagger.io/)，在顶部的URL栏输入可以获取`Step 2`中生成的JSON格式的Swagger文档定义的URL，~~一般来说可以是http://localhost:3000/swagger.json （需要自己手动在代码中书写路由和请求的返回）~~ 在使用了后文要说明的[Swagger UI中间件](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-ui)之后按照默认配置是 http://localhost:3000/api-docs （注意最后没有`/`）。这种方式需要解决跨域请求的问题，详见后文。
 
-~~本地离线查看：直接在本项目public（静态文件目录）下放置离线版`Swagger UI`，直接打开即可查看。详见`Step 2`中的Demo及作者的博文说明。~~
-
-本地离线查看：使用`swagger-tools`中的[Swagger UI中间件](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-ui)，如果你直接使用默认配置：
+本地离线查看：~~直接在本项目public（静态文件目录）下放置离线版`Swagger UI`，直接打开即可查看。详见`Step 2`中的Demo及作者的博文说明。~~使用`swagger-tools`中的[Swagger UI中间件](https://github.com/apigee-127/swagger-tools/blob/master/docs/Middleware.md#swagger-ui)，如果你直接使用默认配置：
 - http://localhost:3000/docs/ 可以看到完整的可视化文档；
 - http://localhost:3000/api-docs （注意最后没有`/`）可以看到自己在`Step 2`中自动生成的Swagger接口定义。
 
@@ -215,7 +213,7 @@ describe('/api/puppies', function() {
 使用`DEBUG=swagger-tools* node app`启动项目，控制台会输出更多详细的信息。
 
 ## 完整的 Demo
-[Maples7/swagger-express-demo](https://github.com/Maples7/swagger-express-demo)：将前面所讲的内容整合进了一个小示例中，以供参考。
+[Maples7/swagger-express-demo](https://github.com/Maples7/swagger-express-demo)： 将前面所讲的内容整合进了一个小示例中，以供参考。
 
 ## 上手必读
 0. [swagger-spec](http://swagger.io/specification/)；
