@@ -31,7 +31,7 @@ data: 2016/8/16 12:02:07
 所以这个奇奇怪怪的名字就诞生啦啦啦~ :D
 
 2. **一句话描述自己：**
-一个对文科十分向往并感兴趣、对理工科有着深厚感情的伪文艺伪技术天蝎男。
+一个对文科十分向往并感兴趣、对理工科有着深厚感情的伪文艺伪技术天蝎男，坚定的理想主义者。
 
 If you want to know more, contact me via my private WeChat account:maples7_lq or email.
 
