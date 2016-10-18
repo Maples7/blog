@@ -1,6 +1,6 @@
 ---
 title: 我心中理想的Web开发流程
-subtitle: ideal-web-development-flow
+subtitle: ideal-web-development-work-flow
 tags:
   - Web开发
   - 工作流程
