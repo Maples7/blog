@@ -120,3 +120,7 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+# include files
+include:
+  - .nojekyll
