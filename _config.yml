@@ -81,7 +81,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Maples7/Maples7.github.io.git
+  repo: 
+    github: https://github.com/Maples7/Maples7.github.io.git,master
+    coding: git@git.coding.net:maples7/maples7.git,master
   branch: master
 
 # Local Search
@@ -124,3 +126,6 @@ baidusitemap:
 # include files
 include:
   - .nojekyll
+
+# Baidu Analytics
+baidu_analytics: 66be32f3560396549d4e96d0454820b3
