@@ -103,4 +103,6 @@ date: 2016-09-05 16:11:49
 
 ## 彩蛋
 
-Facebook提出了一种新的不同于RESTful的API数据查询标准——[GraphQL](http://graphql.org/)，这套标准可以让前端（广义的，包含移动端）来定义需要获取的数据模型，这样做可以极大的减轻后端对于前文所述的文档、接口参数验证、统一数据返回、数据序列化的工作，看起来很有意思。更多了解除了[官网](http://graphql.org/)之外，还可以参考这篇文章：[《新一代数据查询语言GraphQL来啦！》](http://imweb.io/topic/58499c299be501ba17b10a9e)。
+1. Facebook提出了一种新的不同于REST的API数据查询标准——[GraphQL](http://graphql.org/)，这套标准可以让前端（广义的，包含移动端）来定义需要获取的数据模型，这样做可以极大的减轻后端对于前文所述的文档、接口参数验证、统一数据返回、数据序列化的工作，看起来很有意思。更多了解除了[官网](http://graphql.org/)之外，还可以参考这篇文章：[《新一代数据查询语言GraphQL来啦！》](http://imweb.io/topic/58499c299be501ba17b10a9e)。
+
+2. Google在这方面当然也毫不示弱，它家的Google+ API中也有类似的思想：[Partial Responses](https://developers.google.com/+/web/api/rest/#partial-response)。具体说，利用请求的参数`fields`来由客户端决定哪些返回参数是我这次请求所需要的。当然，这没有Facebook的GraphQL功能强大，只能返回一个API全集数据的一个子集，不过它是完全基于REST的，这意味着你可能只需对你现有的系统做最小的改动即可实现类似的功能，减轻后端对于输出数据序列化的负担。
