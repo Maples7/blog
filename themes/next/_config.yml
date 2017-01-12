@@ -36,6 +36,7 @@ menu:
   tags: /tags
   archives: /archives
   about: /about
+  slides: /slides
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -56,6 +57,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  slides: commenting
 
 
 
