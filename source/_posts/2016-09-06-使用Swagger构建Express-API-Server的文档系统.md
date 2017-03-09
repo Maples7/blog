@@ -9,7 +9,7 @@ tags:
 categories: 一只代码狗的自我修养
 date: 2016-09-06 22:16:11
 ---
-<b>[Depreciated] Swagger-tools is not well maintained and has some issues</b>
+<b>[Depreciated] Swagger-tools is not well maintained and has some issues.</b>
 
 ----------
 
