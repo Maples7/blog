@@ -1,6 +1,6 @@
 ﻿1. 先用 PS 设置像素（宽620）和图片质量 1% 导出；
 
-2. 再用 PP Duck 处理；（GIT不用处理了）
+2. 再用 PP Duck 处理；（GIF不用处理了）
 
 3. 再用 http://www.tuhaokuai.com/ 处理；
 
