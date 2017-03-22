@@ -39,9 +39,3 @@ If you want to know more, contact me via my private WeChat account: *maples7_lq
 ## 版权声明
 
 本博客所有内容（包括所有原创文字和文中的**图片**）遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 知识共享协议，转载请务必注明出处。
-
----
-
-## 最近访客
-<div class="ds-recent-visitors" data-num-items="36" data-avatar-size="42" id="ds-recent-visitors"></div>
-
