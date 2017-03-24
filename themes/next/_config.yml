@@ -133,7 +133,8 @@ social:
   GitHub: https://github.com/Maples7
   知乎: https://www.zhihu.com/people/maples7
   # 微博: http://weibo.com/maples74lq/
-  # 豆瓣: https://www.douban.com/people/82391888/
+  豆瓣: https://www.douban.com/people/82391888/
+  简历: http://cv.maples7.com
 
 
 # Social Links Icons
@@ -149,7 +150,8 @@ social_icons:
   Twitter: twitter
   微博: weibo
   知乎: globe
-  豆瓣: globe
+  豆瓣: book
+  简历: file-text-o
 
 
 # Sidebar Avatar
