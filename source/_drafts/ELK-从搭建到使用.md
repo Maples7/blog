@@ -29,8 +29,8 @@ Linux jessie 3.16.0-4-amd64 #1 SMP Debian 3.16.39-1 (2016-12-30) x86_64 GNU/Linu
 
 ### 安装 JRE
 由于 ElasticSearch 是用 Java 写的，所以需要（至少）安装 Java 运行环境 JRE。而新版本的 ElasticSearch 似乎需要 Java 8 的版本，所以用 `java -version` 检查你的 Java 版本，如果不符合要求或者本身就没有安装 JRE，那么查看这些文章安装并配置 Java 环境：
-- [How to Install JAVA 8 (JDK/JRE 8u121) on Debian 8 & 7 via PPA](https://tecadmink.net/install-java-8-on-debian/)
 - [如何使用Apt-Get在Debian 8上安装Java](https://www.howtoing.com/how-to-install-java-with-apt-get-on-debian-8/)
+- [How to Install JAVA 8 (JDK/JRE 8u121) on Debian 8 & 7 via PPA](https://tecadmink.net/install-java-8-on-debian/)
 
 ### 安装 X-Pack
 X-Pack 是官方推荐安装的插件，它把安全、监控、报警、报告和图形化功能集成到了一个包中。
