@@ -17,7 +17,28 @@ categories: 一只代码狗的自我修养
 
 TJ 大神的代码一向简洁强大，Koa 的源码也是如此。如果你[去 GitHub 上查看 Koa 的源码](https://github.com/koajs/koa)，你同样会被其简洁所震撼，核心代码不过 4 个文件，平均每个文件代码行数也就四百来行，看似简简单单，却天才般的把 Express 线性的中间件控制流转变为「洋葱体」结构，从而解锁了更多的姿势和玩法。本文就直接深入 Koa 的源码（v2.2.0），来欣赏 Koa 的曼妙身姿。
 
+## 代码大体结构
 
+lib 目录下总共就四个文件：`application.js`、`context.js`、`request.js` 和 `response.js`。入口文件是 `application.js`，导出的是一个继承了 Node 内建模块 Events 的 Class，构造函数中进行了必要的参数初始化，并且把 `context`、`request` 和 `response` 属性指向了原型链指向其他三个文件导出对象的实例。
+
+然后是类方法，主要的几个 public 的方法如下：
+- `listen`：一个简单的对 `http.createServer(this.callback()).listen(...)` 的封装。
+- `callback`：在 `listen` 中有调用，返回一个用于 `http.createServer` 的回调函数 `handleRequest`，在这个函数中创建了主角 `ctx`，并做了一些原型链继承和 aliases。更重要的是，调用的 `koa-compose` 返回了一个 `fn` 函数，负责了整个中间件「洋葱体」流程的实现和控制。在所有中间件执行完之后，做了一些返回之前的琐碎诸如设置必要的返回头等的工作。
+- `use`：把中间件参数放入 `this.middleware` 数组，并返回 `this` 以便链式调用。
+
+结合 Koa 文档和 `application.js`，基本就可以对整个框架的处理流程有个整体的把握了。其中最主要的部分还是 `callback` 函数中的内容，看完之后对整个基于 Node HTTP 模块封装的中间件处理的流转过程都清楚了。
+
+## Context
+
+这里是对 `this.context` 的原型对象的实现。
+
+没有太多值得一提的东西，基本是对上下文对象 `ctx` 提供几个必需的原型接口以及一个缺省的错误处理函数 `onerror`。有意思的是，利用 `delegates` 包，把对 app 的一些属性的访问直接对应的代理到 `response` 和 `request` 上，这也就是[文档上所说的 `Request aliases` 和 `Response aliases` 具体原因](http://koajs.com/#request-aliases)。
+
+## Request & Response
+
+这俩文件是对 `this.request` 和 `this.response` 的原型对象的实现。
+
+`this.request` 和 `this.response` 中都有大量属性的 getter 和 setter 方法，这些可用的属性在 Koa 文档中都已经列出，代码在这里对它们的读写操作进行了实现。这些属性基本是对 Node HTTP 包中 req 和 res 属性的封装。
 
 ## 「洋葱体」带来了什么
 
