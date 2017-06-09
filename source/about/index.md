@@ -15,7 +15,7 @@ date: 2016/8/16 12:02:07
 
 ### Tags Related:
 
-- Coding, IT, Capturing, Music, Reading, Books, Movies, www, Design, Traveling……
+- Coding, IT, Capturing, Reading, Books, Movies, www, Design, Traveling, Music……
 
 ### Positive:
 
