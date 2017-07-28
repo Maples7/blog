@@ -5,12 +5,12 @@ date: 2016/8/16 12:02:07
 ## About Me
 
 ```xml
-<card>
+<profile>
     <name> Maples7 </name>
     <email> maples7@163.com </email>
-    <major> Electrical Engineering </major>
+    <career> Web Developer </career>
     <location> Beijing, China </location>
-</card>
+</profile>
 ```
 
 ### Tags Related:
