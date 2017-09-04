@@ -6,7 +6,7 @@ date: 2017/1/12 17:03:07
 1. 选择编辑器
 2. Tips for Node Development
 3. Tips for Python Development
-4. A Few Solid Universal Development Tools
+4. A Few Solid Universal Development Tips
 5. How to Write A Pretty README
 6. 编程范式
 7. 工程化思想
