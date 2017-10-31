@@ -19,7 +19,7 @@ date: 2016/8/16 12:02:07
 
 ### Positive:
 
-- MOOC, Podcast, ~~Table Tennis~~, Tennis, ~~Winter~~, Harry Potter, Night, [David Fincher](https://www.douban.com/tag/大卫芬奇/), [The Social Network](https://movie.douban.com/subject/3205624/), [The Count of Monte Cristo](https://book.douban.com/subject/10559578/), [The Three-Body Problem](https://book.douban.com/subject/6518605/), [坂本 龍一](https://zh.wikipedia.org/wiki/坂本龍一), [Jason Mraz](https://en.wikipedia.org/wiki/Jason_Mraz), [Lisa Ono](https://www.douban.com/tag/小野丽莎/), [Krystal Jung](https://en.wikipedia.org/wiki/Krystal_Jung)……
+- MOOC, Podcast, ~~Table Tennis~~, Tennis, Winter, Harry Potter, Night, [David Fincher](https://www.douban.com/tag/大卫芬奇/), [The Social Network](https://movie.douban.com/subject/3205624/), [The Count of Monte Cristo](https://book.douban.com/subject/10559578/), [The Three-Body Problem](https://book.douban.com/subject/6518605/), [坂本 龍一](https://zh.wikipedia.org/wiki/坂本龍一), [Jason Mraz](https://en.wikipedia.org/wiki/Jason_Mraz), [Lisa Ono](https://www.douban.com/tag/小野丽莎/), [Krystal Jung](https://en.wikipedia.org/wiki/Krystal_Jung)……
 
 ### FAQ:
 
