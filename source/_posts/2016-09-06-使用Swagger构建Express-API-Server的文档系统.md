@@ -12,8 +12,6 @@ date: 2016-09-06 22:16:11
 
 如[上一篇博客](http://maples7.com/2016/09/05/build-qualified-restful-api-server/)所说，好的文档系统对 API Server 至关重要，本文介绍在 Express 框架中使用 Swagger 构建一个良好的项目文档系统的基本流程，同时明确一些实践过程中肯定会遇到的问题的解决方案。本文遵循`Swagger 2.0`使用规范。
 
-<!-- {% fullimage http://oc3nlt0h2.bkt.clouddn.com/20160907.png, 图片显示错误, Swagger——The World's Most Popular Framework for APIs %} -->
-
 {% fullimage https://i.loli.net/2018/08/06/5b672f1a563d0.png, 图片显示错误, Swagger——The World's Most Popular Framework for APIs %}
 
 <!-- more -->
