@@ -5,11 +5,11 @@
 # Site
 title: Maples7's Blog
 subtitle: 
-description: 'Forever young, forever on the road.'
+description: Forever young, forever on the road.
+keywords: Maples7,个人博客,代码狗,浮生散记,一只代码狗的自我修养
 author: Maples7
-language: zh-Hans
-timezone:
-avatar: https://i.loli.net/2018/08/06/5b67317dd4ba5.jpg
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -44,25 +44,19 @@ highlight:
   auto_detect: false
   tab_replace:
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
-
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
-
 # Pagination
 ## Set per_page to 0 to disable pagination
 per_page: 5
 pagination_dir: page
 
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
 index_generator:
+  path: ''
   per_page: 5
+  order_by: -date
 
 archive_generator:
   per_page: 20
@@ -74,6 +68,18 @@ tag_generator:
 
 category_generator:
   per_page: 20
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -89,36 +95,9 @@ deploy:
     github: git@github.com:Maples7/Maples7.github.io.git
   branch: master
 
-# Local Search
-search:
-  path: search.xml
-  field: post
-
-# Optimization
-html_minifier:
-  enable: true
-  exclude: 
-
-css_minifier:
-  enable: true
-  exclude: 
-    - '*.min.css'
-
-js_minifier:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude: 
-    - '*.min.js'
-
-image_minifier:
-  enable: true
-  interlaced: true
-  multipass: true
-  optimizationLevel: 7
-  pngquant: true
-  progressive: true
+#################################################
+# New added settings by myself
+#################################################
 
 # Sitemap
 sitemap:
@@ -130,5 +109,200 @@ baidusitemap:
 include:
   - .nojekyll
 
-# Baidu Analytics
-baidu_analytics: 66be32f3560396549d4e96d0454820b3
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: ox9piPRb4PMLblpdjYObCAbP-gzGzoHsz
+  app_key: AxGe3VngCSYm3M1TcS303rwj
+  username: maples7@163.com
+  password: Lq87654321
+
+filter_optimize:
+  enable: true
+  remove_query_string: true
+  remove_comments: false
+  css:
+    enable: true
+    bundle: true
+    delivery: true
+    inlines:
+    excludes:
+  js:
+    bundle: true
+    excludes:
+  priority: 12
+
+all_minifier: true
+
+#################################################
+# Theme Config starts from here...
+#################################################
+
+theme_config:
+  scheme: Gemini
+  favicon:
+    small: favicon-16x16.png
+    medium: favicon-32x32.png
+    apple_touch_icon: apple-touch-icon.png
+    safari_pinned_tab: safari-pinned-tab.svg
+    android_manifest: site.webmanifest
+    ms_browserconfig: browserconfig.xml
+  avatar:
+    url: https://i.loli.net/2018/08/06/5b67317dd4ba5.jpg
+    rounded: true
+  menu:
+    home: / || home
+    categories: /categories || th
+    tags: /tags/ || tags
+    archives: /archives/ || archive
+    讲演: /slides || commenting
+    about: /about/ || user
+  menu_settings:
+    icons: true
+    badges: true
+  scroll_to_more: false
+  save_scroll: true
+  mobile_layout_economy: true
+  motion:
+    enable: true
+    async: true
+    transition:
+      post_block: fadeIn
+      post_header: slideDownIn
+      post_body: slideDownIn
+      coll_header: slideLeftIn
+      # Only for Pisces | Gemini.
+      sidebar: slideUpIn
+  codeblock:
+    copy_button:
+      enable: true
+      show_result: true
+  related_posts:
+    enable: true
+  sidebar:
+    b2t: true
+    scrollpercent: true
+  seo: true
+  index_with_subtitle: true
+  baidu_push: true
+  local_search:
+    enable: true
+    trigger: auto
+    top_n_per_article: 1
+    unescape: true
+
+  github_banner: https://github.com/Maples7 || Follow me on GitHub
+  reward:
+    enable: true
+    comment: 听说，你想请我吃糖？0.0
+    wechatpay: https://i.loli.net/2018/08/06/5b6732ef0e7fe.gif
+    alipay: https://i.loli.net/2018/08/06/5b6732ef1f148.gif
+  post_copyright:
+    enable: true
+    license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
+  creative_commons:
+    license: by-nc-sa
+    sidebar: true
+    post: true
+  footer:
+    since: 2016
+    icon:
+      name: heart
+      animated: true
+      color: "#DC143C"
+    powered:
+      enable: true
+      version: true
+    theme:
+      enable: true
+      version: true
+    custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a> & <a href="https://pages.github.com/" class="theme-link" rel="noopener" target="_blank">Github Pages</a>
+  wechat_subscriber:
+    enabled: false
+    qcode: /uploads/wechat-qcode.jpg
+    description: 公众号会更新自己随手写的只言片语，欢迎来玩儿~
+  social:
+    GitHub: https://github.com/Maples7 || github
+    知乎: https://www.zhihu.com/people/maples7 || globe
+    豆瓣: https://www.douban.com/people/82391888/ || book
+    微博: http://weibo.com/maples74lq/ || weibo
+    邮箱: mailto:maples7@163.com || envelope
+    简历: http://cv.maples7.com || file-text-o
+  disqus:
+    enable: true
+    shortname: maples7
+    count: true
+    lazyload: true
+  baidu_analytics: 66be32f3560396549d4e96d0454820b3
+  # baidushare:
+  #   type: slide
+  leancloud_visitors:
+    enable: true
+    app_id: ox9piPRb4PMLblpdjYObCAbP-gzGzoHsz
+    app_key: AxGe3VngCSYm3M1TcS303rwj
+    security: true
+    betterPerformance: true
+  busuanzi_count:
+    enable: true
+    total_visitors: true
+    total_visitors_icon: user
+    total_views: true
+    total_views_icon: eye
+    post_views: false
+    post_views_icon: eye
+  
+  fancybox: true
+  bookmark:
+    enable: true
+    save: auto
+  reading_progress:
+    enable: true
+    color: "#37c6c0"
+    height: 2px
+  pace: true
+  fastclick: true
+  lazyload: true
+  han: true
+  pangu: true
+  vendors:
+    jquery: //cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
+    fancybox: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js
+    fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css
+    fastclick: //cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js
+    lazyload: //cdn.jsdelivr.net/npm/jquery_lazyload@1.9.3/jquery.lazyload.min.js
+    velocity: https://cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.min.js
+    velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1.2.1/velocity.ui.min.js
+    ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0.7.17/src/ua-parser.min.js
+    fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+    # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.js
+    # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2.4.1/dist/instantsearch.min.css
+    pace: //cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js
+    pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css
+    # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js
+    # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js
+    # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1.0.0/canvas-ribbon.js
+    # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js
+    # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js
+    # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
+    # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js
+    pangu: //cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js
+    Han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
+    needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.js
+    needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.css
+    bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1.0.0/bookmark.min.js
+    reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
+    # valine: //cdn.jsdelivr.net/npm/valine@1.3.3/dist/Valine.min.js
+    # gitalk_js: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js
+    # gitalk_css: https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css
+    # md5: https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js
