@@ -4,7 +4,7 @@
 
 # Site
 title: Maples7's Blog
-subtitle: 
+subtitle:
 description: Forever young, forever on the road.
 keywords: Maples7,个人博客,代码狗,浮生散记,一只代码狗的自我修养
 author: Maples7
@@ -90,7 +90,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: 
+  repo:
     coding: git@git.coding.net:maples7/maples7.git
     github: git@github.com:Maples7/Maples7.github.io.git
   branch: master
@@ -205,7 +205,7 @@ theme_config:
   github_banner: https://github.com/Maples7 || Follow me on GitHub
   reward:
     enable: true
-    comment: 听说，你想请我吃糖？0.0
+    comment: 听说，你想请我喝咖啡？☕️
     wechatpay: https://i.loli.net/2018/08/06/5b6732ef0e7fe.gif
     alipay: https://i.loli.net/2018/08/06/5b6732ef1f148.gif
   post_copyright:
@@ -220,7 +220,7 @@ theme_config:
     icon:
       name: heart
       animated: true
-      color: "#DC143C"
+      color: '#DC143C'
     powered:
       enable: true
       version: true
@@ -261,14 +261,14 @@ theme_config:
     total_views_icon: eye
     post_views: false
     post_views_icon: eye
-  
+
   fancybox: true
   bookmark:
     enable: true
     save: auto
   reading_progress:
     enable: true
-    color: "#37c6c0"
+    color: '#37c6c0'
     height: 2px
   pace: true
   fastclick: true
