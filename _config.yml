@@ -205,7 +205,7 @@ theme_config:
   github_banner: https://github.com/Maples7 || Follow me on GitHub
   reward:
     enable: true
-    comment: 听说，你想请我喝咖啡？☕️
+    comment: 听说，你想请我喝杯咖啡？☕️
     wechatpay: https://i.loli.net/2018/08/06/5b6732ef0e7fe.gif
     alipay: https://i.loli.net/2018/08/06/5b6732ef1f148.gif
   post_copyright:
