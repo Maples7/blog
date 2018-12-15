@@ -175,7 +175,7 @@ theme_config:
   save_scroll: true
   mobile_layout_economy: true
   motion:
-    enable: true
+    enable: false
     async: true
     transition:
       post_block: fadeIn
