@@ -273,7 +273,7 @@ theme_config:
   pace: true
   fastclick: true
   lazyload: true
-  han: true
+  # han: true
   pangu: true
   vendors:
     jquery: //cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js
@@ -297,7 +297,7 @@ theme_config:
     # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
     # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js
     pangu: //cdn.jsdelivr.net/npm/pangu@3.3.0/dist/browser/pangu.min.js
-    Han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
+    # Han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
     needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.js
     needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1.0.0/needsharebutton.min.css
     bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1.0.0/bookmark.min.js
