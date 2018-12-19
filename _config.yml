@@ -89,11 +89,13 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo:
-    coding: git@git.coding.net:maples7/maples7.git
-    github: git@github.com:Maples7/Maples7.github.io.git
-  branch: master
+  - type: git
+    repo:
+      coding: git@git.coding.net:maples7/maples7.git
+      github: git@github.com:Maples7/Maples7.github.io.git
+    branch: master
+  # other deployer
+  - type: leancloud_counter_security_sync
 
 #################################################
 # New added settings by myself
@@ -125,7 +127,7 @@ leancloud_counter_security:
   enable_sync: true
   app_id: ox9piPRb4PMLblpdjYObCAbP-gzGzoHsz
   app_key: AxGe3VngCSYm3M1TcS303rwj
-  username: maples7@163.com
+  username: Maples7
   password: Lq87654321
 
 filter_optimize:
