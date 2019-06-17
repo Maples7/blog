@@ -204,10 +204,15 @@ theme_config:
     top_n_per_article: 1
     unescape: true
 
-  github_banner: https://github.com/Maples7 || Follow me on GitHub
-  reward:
+  github_banner:
     enable: true
+    permalink: https://github.com/Maples7
+    title: Follow me on GitHub
+  reward_settings:
+    enable: true
+    animation: false
     comment: 听说，你想请我喝杯咖啡？☕️
+  reward:
     wechatpay: https://i.loli.net/2018/08/06/5b6732ef0e7fe.gif
     alipay: https://i.loli.net/2018/08/06/5b6732ef1f148.gif
   post_copyright:
@@ -217,6 +222,7 @@ theme_config:
     license: by-nc-sa
     sidebar: true
     post: true
+    language: deed.zh
   footer:
     since: 2016
     icon:
