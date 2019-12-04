@@ -69,9 +69,9 @@ date: 2019-12-03 00:35:32
 
 实际上，在经过我的一番折腾之后，最终我们线上使用的版本并没有使用官方的 Helm Chart，而是完全基于我们自己 build 的 Airflow 镜像，从头搭建了我们自己的 Helm Release Chart，这样整个系统拥有最高的可定制度（有些问题不在代码层面定制根本没法绕过去，下文有详述），同时也剔除了很多 Helm 官方 Chart 里有但我们不需要的东西。跟官方的 Chart 相比，我们主要做了这些更改：
 
-- 没有使用 Airflow 官方的 Kubernetes Executor，而是自己继承 `LocalExecutor` 类定制我们自己的 `KubeExecutor`，实际做的事情也很简单，就是实际在执行任务的时候不直接像 `LocalExecutor` 那样在本地执行命令，而用 `kubectl` 把任务指定在某一个 Worker Pod 或使用了 `KubernetesPodOperator` 启动的临时 Pod 里运行。这样做的主要考虑的是官方的 `KubernetesPodOperator` 考虑了很多通用性功能从而进行了较为复杂的流程设计，我们团队自身完全可以结合在阿里云里 Kubernetes 集群的具体特点改造 `LocalExecutor`，这样不仅在运行时可以节省更多的机器资源，而且对于我们最核心的需求 —— 稳定的生产数据—— 来说是更有利的，毕竟在运行时动态操作 Kubernetes 集群资源的流程变得简单了很多。
+- 没有使用 Airflow 官方的 Kubernetes Executor，而是自己继承 `LocalExecutor` 类定制我们自己的 `KubeExecutor`，实际做的事情也很简单，就是实际在执行任务的时候不直接像 `LocalExecutor` 那样在本地执行命令，而用 `kubectl` 把任务指定在某一个 Worker Pod 或使用了 `KubernetesPodOperator` 启动的临时 Pod 里运行。这样做主要考虑的是官方的 `KubernetesPodOperator` 为了一些通用性功能从而进行了较为复杂的流程设计，我们团队自身完全可以结合在阿里云里 Kubernetes 集群的具体特点改造 `LocalExecutor`，这样不仅在运行时可以节省更多的机器资源，而且对于我们最核心的需求 —— 稳定的生产数据 —— 来说是更有利的，毕竟在运行时动态操作 Kubernetes 集群资源的流程变得简单了很多。
 
-- 阿里云还有一个很大的坑是在它上面构建的官方 Kubernetes 集群产品不提供阿里云的 CA 根证书校验，而 [Kubernetes 官方明确指明了需要校验 CA bundle](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#directly-accessing-the-rest-api-1)，导致我们无法通过 API 与 Kubernetes Server 进行交互，进行在使用 `KubernetesPodOperator` 时会因为证书校验失败而无法创建 Pod。而 `KubernetesPodOperator` 也并没有提供参数让我们将 `verify_ssl` 设置为 False。所以最终我们也没有直接用官方的 `KubernetesPodOperator`，而是自己改了一个类似的把 `verify_ssl` 设置为 False 的 Operator 的版本来使用。同时这里也呼吁一下阿里云能按照技术社区标准来提供自己的技术服务与产品（我们提了工单 argue 这个事情，最终客服给我提供了根证书并叮嘱不要扩散，并不清楚阿里云不能对外公开根证书是基于什么样的考量；在其他项目中我们使用了客服提供的根证书来进行校验是没有问题的）。
+- 阿里云还有一个很大的坑是在它上面构建的官方 Kubernetes 集群产品不提供阿里云的 CA 根证书校验，而 [Kubernetes 官方明确指明了需要校验 CA bundle](https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#directly-accessing-the-rest-api-1)，导致我们无法通过 API 与 Kubernetes Server 进行交互，进而在使用 `KubernetesPodOperator` 时会因为证书校验失败而无法创建 Pod。而 `KubernetesPodOperator` 也并没有提供参数让我们将 `verify_ssl` 设置为 False。所以最终我们也没有直接用官方的 `KubernetesPodOperator`，而是自己改了一个类似的把 `verify_ssl` 设置为 False 的 Operator 的版本来使用。同时这里也呼吁一下阿里云能按照技术社区标准来提供自己的技术服务与产品（我们提了工单 argue 这个事情，最终客服给我提供了根证书并叮嘱不要扩散，并不清楚阿里云不能对外公开根证书是基于什么样的考量；在其他项目中我们使用了客服提供的根证书来进行校验是没有问题的）。
 
 - 去掉了不必要的通用型适配的各种选择，完全按自身需求合理定制。
 
