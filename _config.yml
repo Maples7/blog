@@ -91,7 +91,7 @@ theme: next
 deploy:
   - type: git
     repo:
-      coding: git@git.coding.net:maples7/maples7.git
+      coding: git@e.coding.net:maples7/maples7.git
       github: git@github.com:Maples7/Maples7.github.io.git
     branch: master
   # other deployer

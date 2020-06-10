@@ -10,7 +10,8 @@ date: 2016/8/16 12:02:07
     <name> Maples7 </name>
     <email> maples7@163.com </email>
     <career> Software Developer </career>
-    <location> Beijing, China </location>
+    <company> Microsoft </company>
+    <location> Soochow, China </location>
 </profile>
 ```
 
