@@ -4,19 +4,23 @@
 
 # Site
 title: Maples7's Blog
-subtitle:
+subtitle: ''
 description: 价值、概率、长期与非线性
 keywords: Maples7,个人博客,代码狗,浮生散记,一只代码狗的自我修养
 author: Maples7
-language: zh-CN
+language: 
+  - zh-CN
+  - en
 timezone: Asia/Shanghai
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://maples7.com/
-root: /
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://maples7.com/
 permalink: :year/:month/:day/:subtitle/
 permalink_defaults:
+pretty_urls:
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -32,7 +36,10 @@ skip_render:
 new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -42,12 +49,14 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace:
-
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 5
-pagination_dir: page
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -58,21 +67,14 @@ index_generator:
   per_page: 5
   order_by: -date
 
-archive_generator:
-  per_page: 20
-  yearly: true
-  monthly: true
-
-tag_generator:
-  per_page: 20
-
-category_generator:
-  per_page: 20
-
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -80,6 +82,20 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 5
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+  - .nojekyll
+exclude:
+ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -87,216 +103,33 @@ time_format: HH:mm:ss
 theme: next
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   - type: git
     repo:
       # coding: git@e.coding.net:maples7/maples7.git
       github: git@github.com:Maples7/Maples7.github.io.git
     branch: master
-  # other deployer
-  - type: leancloud_counter_security_sync
 
 #################################################
 # New added settings by myself
 #################################################
 
-# Sitemap
-sitemap:
-  path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
-
-# include files
-include:
-  - .nojekyll
-
-symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: true
-  total_time: true
-
 search:
   path: search.xml
   field: post
+  content: true
   format: html
-  limit: 10000
 
-leancloud_counter_security:
-  enable_sync: true
-  app_id: ox9piPRb4PMLblpdjYObCAbP-gzGzoHsz
-  app_key: AxGe3VngCSYm3M1TcS303rwj
-  username: Maples7
-  password: Lq87654321
-
-filter_optimize:
-  enable: true
-  remove_query_string: true
-  remove_comments: false
-  css:
-    enable: true
-    bundle: true
-    delivery: true
-    inlines:
-    excludes:
-  js:
-    bundle: true
-    excludes:
-  priority: 12
-
-all_minifier: true
-
-#################################################
-# Theme Config starts from here...
-#################################################
-
-theme_config:
-  scheme: Gemini
-  favicon:
-    small: favicon-16x16.png
-    medium: favicon-32x32.png
-    apple_touch_icon: apple-touch-icon.png
-    safari_pinned_tab: safari-pinned-tab.svg
-    android_manifest: site.webmanifest
-    ms_browserconfig: browserconfig.xml
-  avatar:
-    url: https://i.loli.net/2018/08/06/5b67317dd4ba5.jpg
-    rounded: true
-  menu:
-    home: / || home
-    categories: /categories || th
-    tags: /tags/ || tags
-    archives: /archives/ || archive
-    讲演: /slides || commenting
-    about: /about/ || user
-  menu_settings:
-    icons: true
-    badges: true
-  scroll_to_more: false
-  save_scroll: true
-  mobile_layout_economy: true
-  motion:
-    enable: false
-    async: true
-    transition:
-      post_block: fadeIn
-      post_header: slideDownIn
-      post_body: slideDownIn
-      coll_header: slideLeftIn
-      # Only for Pisces | Gemini.
-      sidebar: slideUpIn
-  codeblock:
-    copy_button:
-      enable: true
-      show_result: true
-  related_posts:
-    enable: true
-  sidebar:
-    b2t: true
-    scrollpercent: true
-  seo: true
-  index_with_subtitle: true
-  baidu_push: true
-  local_search:
-    enable: true
-    trigger: auto
-    top_n_per_article: 1
-    unescape: true
-
-  github_banner:
-    enable: true
-    permalink: https://github.com/Maples7
-    title: Follow me on GitHub
-  reward_settings:
-    enable: true
-    animation: false
-    comment: 听说，你想请我喝杯咖啡？☕️
-  reward:
-    wechatpay: https://i.loli.net/2018/08/06/5b6732ef0e7fe.gif
-    alipay: https://i.loli.net/2018/08/06/5b6732ef1f148.gif
-  post_copyright:
-    enable: true
-    license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>
-  creative_commons:
-    license: by-nc-sa
-    sidebar: true
-    post: true
-    language: deed.zh
-  footer:
-    since: 2016
-    icon:
-      name: heart
-      animated: true
-      color: '#DC143C'
-    powered:
-      enable: true
-      version: true
-    theme:
-      enable: true
-      version: true
-    custom_text: Hosted by <a href="https://pages.coding.me" class="theme-link" rel="noopener" target="_blank">Coding Pages</a> & <a href="https://pages.github.com/" class="theme-link" rel="noopener" target="_blank">Github Pages</a>
-  wechat_subscriber:
-    enabled: false
-    qcode: /uploads/wechat-qcode.jpg
-    description: 公众号会更新自己随手写的只言片语，欢迎来玩儿~
-  social:
-    GitHub: https://github.com/Maples7 || github
-    知乎: https://www.zhihu.com/people/maples7 || globe
-    豆瓣: https://www.douban.com/people/82391888/ || book
-    微博: http://weibo.com/maples74lq/ || weibo
-    邮箱: mailto:maples7@163.com || envelope
-    简历: http://cv.maples7.com || file-text-o
-  disqus:
-    enable: true
-    shortname: maples7
-    count: true
-    lazyload: true
-  baidu_analytics: 66be32f3560396549d4e96d0454820b3
-  # baidushare:
-  #   type: slide
-  leancloud_visitors:
-    enable: true
-    app_id: ox9piPRb4PMLblpdjYObCAbP-gzGzoHsz
-    app_key: AxGe3VngCSYm3M1TcS303rwj
-    security: true
-    betterPerformance: true
-  busuanzi_count:
-    enable: true
-    total_visitors: true
-    total_visitors_icon: user
-    total_views: true
-    total_views_icon: eye
-    post_views: false
-    post_views_icon: eye
-
-  fancybox: true
-  bookmark:
-    enable: true
-    save: auto
-  reading_progress:
-    enable: true
-    color: '#37c6c0'
-    height: 2px
-  pace: true
-  fastclick: true
-  lazyload: true
-  # han: true
-  pangu: true
-  vendors:
-    jquery: //cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js
-    fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-    fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-    fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
-    lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
-    velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
-    velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
-    ua_parser: //cdn.jsdelivr.net/npm/ua-parser-js@0/src/ua-parser.min.js
-    fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-    pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
-    pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
-    pangu: //cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js
-    needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
-    needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
-    bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
-    reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit:
+  content_limit_delim:
+  order_by: -date
+  icon:
+  autodiscovery: true
+  template:
