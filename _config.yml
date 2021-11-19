@@ -5,7 +5,7 @@
 # Site
 title: Maples7's Blog
 subtitle:
-description: Forever young, forever on the road.
+description: 价值、概率、长期与非线性
 keywords: Maples7,个人博客,代码狗,浮生散记,一只代码狗的自我修养
 author: Maples7
 language: zh-CN
@@ -91,7 +91,7 @@ theme: next
 deploy:
   - type: git
     repo:
-      coding: git@e.coding.net:maples7/maples7.git
+      # coding: git@e.coding.net:maples7/maples7.git
       github: git@github.com:Maples7/Maples7.github.io.git
     branch: master
   # other deployer
