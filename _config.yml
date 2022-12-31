@@ -8,7 +8,7 @@ subtitle: ''
 description: 价值、概率、长期与非线性
 keywords: Maples7,个人博客,代码狗,浮生散记,一只代码狗的自我修养
 author: Maples7
-language: 
+language:
   - zh-CN
   - en
 timezone: Asia/Shanghai
@@ -47,15 +47,19 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
   auto_detect: false
+  line_number: true
+  line_threshold: 0
   tab_replace: ''
+  exclude_languages:
+    - example
   wrap: true
   hljs: false
 prismjs:
   enable: false
   preprocess: true
   line_number: true
+  line_threshold: 0
   tab_replace: ''
 
 # Home page setting
