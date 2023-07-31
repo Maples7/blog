@@ -144,9 +144,11 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/Maples7 || fab fa-github
+  Twitter: https://twitter.com/Maples67 || fab fa-twitter
   知乎: https://www.zhihu.com/people/maples7 || fab fa-zhihu
   豆瓣: https://www.douban.com/people/82391888/ || fas fa-book-reader
   微博: https://weibo.com/u/3888197280 || fab fa-weibo
+  图虫: https://maples7.tuchong.com/ || fa-solid fa-camera
   邮箱: mailto:maples7@163.com || fas fa-at
   简历: https://cv.maples7.com || fas fa-file
 
@@ -742,11 +744,11 @@ local_search:
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
   # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  top_n_per_article: -1
   # Unescape html strings to the readable one.
-  unescape: false
+  unescape: true
   # Preload the search data when the page loads.
-  preload: false
+  preload: true
 
 
 # ---------------------------------------------------------------
